@@ -1,5 +1,5 @@
 
-# Sistema de administración universal (SAU)
+# Sistema de administración universitaria (SAU)
 
 Sistema de gestión de clases para los profesores y el personal del Instituto Tecnológico Beltrán.
 
