@@ -25,7 +25,7 @@ if (session_status() === PHP_SESSION_NONE) {
           <select class="inputs-modal" name="materia" id="materia-id">
             <option value="">Seleccione la materia</option>
             <?php
-            obtenerMaterias($conexionBD);
+            obtenerMaterias($conn);
             ?>
           </select>
         </label>
@@ -87,10 +87,10 @@ if (session_status() === PHP_SESSION_NONE) {
 <?php
 $id_usuario = 1;
 
-function obtenerMaterias($conexionBD)
+function obtenerMaterias($conn)
 {
   $query_materia = "SELECT MATERIAS.NOMBRE_MATERIA, MATERIAS.ID_MATERIA FROM materias";
-  $res_materia = mysqli_query($conexionBD, $query_materia);
+  $res_materia = mysqli_query($conn, $query_materia);
   if ($res_materia) {
     while ($fila_materia = mysqli_fetch_assoc($res_materia)) {
 ?>
@@ -98,14 +98,14 @@ function obtenerMaterias($conexionBD)
     <?php
     }
   } else {
-    echo "Error al ejecutar la consulta de Seleccionar Materias: " . mysqli_error($conexionBD);
+    echo "Error al ejecutar la consulta de Seleccionar Materias: " . mysqli_error($conn);
   }
 }
 
-function agregarClases($conexionBD, $id_usuario, $id_materia, $comision, $aula, $fecha, $hora, $temas, $novedad, $archivos)
+function agregarClases($conn, $id_usuario, $id_materia, $comision, $aula, $fecha, $hora, $temas, $novedad, $archivos)
 {
   $consulta = "INSERT INTO CLASES(CODIGO_USUARIO, ID_MATERIA, FECHA, HORA, TEMAS, NOVEDADES, COMISION, AULA, ARCHIVOS) VALUES ('$id_usuario','$id_materia','$fecha','$hora','$temas','$novedad','$comision','$aula', '$archivos')";
-  $resultado = mysqli_query($conexionBD, $consulta);
+  $resultado = mysqli_query($conn, $consulta);
   if ($resultado) {
     return true;
   } else {
@@ -132,7 +132,7 @@ if (isset($_POST['btn_Añadir'])) {
     strlen($novedad) >= 0 &&
     strlen($archivos) >= 0
   ) {
-    if (agregarClases($conexionBD, $id_usuario, $id_materia, $comision, $aula, $fecha, $hora, $temas, $novedad, $archivos)) {
+    if (agregarClases($conn, $id_usuario, $id_materia, $comision, $aula, $fecha, $hora, $temas, $novedad, $archivos)) {
       header("Location:index.php?clase_agregada=true");
       exit();
       // return 1;
