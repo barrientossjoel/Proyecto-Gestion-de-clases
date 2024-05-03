@@ -21,7 +21,7 @@ if (isset($_SESSION['NUMBER_CHECKBOX'])) {
   WHERE CLASES.CODIGO_USUARIO = '$id_usuario'
   AND CLASES.ID_CLASE = '$valor_checkbox'";
 
-  $resultado = mysqli_query($conexionBD, $consulta);
+  $resultado = mysqli_query($conn, $consulta);
   if ($resultado && $resultado->num_rows > 0) {
     $fila = mysqli_fetch_array($resultado);
 
@@ -53,7 +53,7 @@ if (isset($_SESSION['NUMBER_CHECKBOX'])) {
         <select class="inputs-modal mod_materia" name="new_materia" id="new-materia-id">
           <option value="<?php echo $id_materia; ?>" class="op-materia"><?php echo $materia; ?></option>
           <?php
-          obtenerMaterias($conexionBD);
+          obtenerMaterias($conn);
           ?>
         </select>
       </label>
@@ -72,15 +72,9 @@ if (isset($_SESSION['NUMBER_CHECKBOX'])) {
         </select>
       </label>
 
-      <label for="new-aula-id">
-        Aula
-        <select class="inputs-modal mod_aula" name="new_aula" id="new-aula-id">
-          <option value="<?php echo $aula; ?>"><?php echo $aula; ?></option>
-          <option value="Aula 21">Aula 21</option>
-          <option value="Aula 22">Aula 22</option>
-          <option value="Aula 23">Aula 23</option>
-          <option value="Aula 24">Aula 24</option>
-        </select>
+      <label for="aula-id">
+        Aula:
+        <input type="number" min="1" max=100 placeholder="Ingrese número de aula" class="inputs-modal" name="aula" id="aula-id" value="<?php echo $aula; ?>">
       </label>
 
       <label for="new-hora-id">
@@ -150,8 +144,8 @@ if (isset($_POST['btn_Modificar'])) {
   ) {
     $consulta = "UPDATE CLASES SET ID_MATERIA = '$id_materia', FECHA ='$fecha', HORA = '$hora', TEMAS = '$temas', NOVEDADES = '$novedad', COMISION = '$comision', AULA = '$aula', ARCHIVOS = '$archivos' 
     WHERE CODIGO_USUARIO = '$id_usuario' AND ID_CLASE= '$valor_checkbox'";
-    mysqli_query($conexionBD, $consulta);
-    $resultado = mysqli_query($conexionBD, $consulta);
+    mysqli_query($conn, $consulta);
+    $resultado = mysqli_query($conn, $consulta);
     if ($resultado) {
       return 1;
       // header("Location:index.php");
