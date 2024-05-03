@@ -21,6 +21,7 @@ $_SESSION["CODIGO_USUARIO"] = 1;
   <!-- Styles CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/modal.css">
+  <link rel="icon" href="assets/img/logo.png">
 </head>
 
 <body>
@@ -50,14 +51,14 @@ $_SESSION["CODIGO_USUARIO"] = 1;
       <p>¡Bienvenido
         <?php
         $query_welcome = "SELECT NOMBRE_PERSONA, APELLIDO_PERSONA, CARGO FROM PERSONAS WHERE CARGO = 'Profesor'";
-        $res_welcome = mysqli_query($conexionBD, $query_welcome);
+        $res_welcome = mysqli_query($conn, $query_welcome);
         if ($res_welcome) {
           $fila_welcome = mysqli_fetch_assoc($res_welcome);
         ?>
           <?php echo $fila_welcome['NOMBRE_PERSONA'] . " " . $fila_welcome['APELLIDO_PERSONA']; ?>! <span style="font-weight: bold; color:darkorange;">(<?php echo $fila_welcome['CARGO']; ?>)</span></p>
     <?php
         } else {
-          echo "Hubo un error al hacer la consulta de Bienvenida: " . mysqli_error($conexionBD);
+          echo "Hubo un error al hacer la consulta de Bienvenida: " . mysqli_error($conn);
         }
     ?>
 
@@ -131,7 +132,7 @@ $_SESSION["CODIGO_USUARIO"] = 1;
               WHERE clases.CODIGO_USUARIO = usuarios.CODIGO_USUARIO
               AND clases.ID_MATERIA = materias.ID_MATERIA
               AND usuxrol.CODIGO_USUARIO = clases.CODIGO_USUARIO";
-              $resultado = mysqli_query($conexionBD, $consulta);
+              $resultado = mysqli_query($conn, $consulta);
               mostrarDatos($resultado);
               ?>
             </tbody>
