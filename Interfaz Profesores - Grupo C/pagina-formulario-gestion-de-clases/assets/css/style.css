@@ -1,0 +1,310 @@
+:root {
+  --color-borders-main: #767676;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* width: 90%; */
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+  font-family: system-ui;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+}
+
+header {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #202020;
+  font-weight: 800;
+}
+
+.name-page {
+  text-transform: uppercase;
+
+}
+
+#nav-bar ul {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+#nav-bar li {
+  background: rgb(62, 66, 100);
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+#nav-bar .nav-links {
+  color: #fff;
+  text-decoration: none;
+}
+
+#nav-bar li:hover {
+  background: rgb(30, 31, 46);
+  border: 1px solid #7e7e7e;
+}
+
+.contenedor-bienvenida-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  font-size: 20px;
+}
+
+/* .msg-alta-success{
+padding: 5px 10px;
+margin: 10px 0px;
+background-color: rgb(141, 190, 141);
+color: #000;
+border-radius: 8px;
+}
+
+.btn-close-msg-alta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #000!important;
+  padding: 5px 10px!important;
+  color: #fff;
+} */
+
+/* Seccion menu de administrador */
+main {
+  margin: 0 20px;
+}
+
+.container {
+  border: 1px solid var(--color-borders-main);
+  margin: 50px 0px;
+  padding: 5px 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#menu,
+#tabla-clases {
+  padding: 10px 20px;
+  margin: 15px 10px;
+  border: 1px solid var(--color-borders-main);
+}
+
+#menu {
+  min-width: 170px;
+  text-align: center;
+}
+
+#menu .descripcion-menu {
+  text-align: center;
+}
+
+#menu .heading3-descripcion {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#menu .btns-menu {
+  width: 100%;
+  margin: 15px 0px;
+  padding: 14px;
+  font-weight: bold;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.btn-alta {
+  background: blue;
+}
+
+.btn-alta:hover {
+  background: rgb(0, 0, 181);
+}
+
+.btn-modificar {
+  background: rgb(51, 126, 51);
+}
+
+.btn-modificar:disabled,
+.btn-modificar:hover:disabled {
+  background-color: black;
+  color: #666666;
+}
+
+.btn-modificar:hover {
+  background: rgb(31, 74, 31)
+}
+
+.btn-baja {
+  background: rgb(232, 21, 21);
+}
+
+.btn-baja:disabled,
+.btn-baja:hover:disabled {
+  background-color: black;
+  color: #666666;
+}
+
+.btn-baja:hover {
+  background: rgb(165, 12, 12);
+}
+
+.imagen-menu img {
+  border-radius: 8px;
+}
+
+/* Seccion de la tabla de registros */
+.contenedor-buscador-filtros {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.search {
+  display: flex;
+}
+
+.input-search {
+  width: 600px;
+  border: 1px solid blueviolet;
+}
+
+.input-submit-search {
+  border: 1px solid rgb(12, 146, 190);
+}
+
+/* Tabla */
+
+.contenedor-tabla {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 60vh;
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+td,
+th {
+  vertical-align: middle !important;
+  border: 1px solid #000;
+  text-align: center;
+}
+
+.th-class-checkbox {
+  width: 35px;
+}
+
+.th-class-comision {
+  width: 83px;
+}
+
+.th-class-aula {
+  width: 52px;
+}
+
+.th-class-hora {
+  width: 100px;
+}
+
+.th-class-fecha {
+  width: 120px;
+}
+
+.id_profe {
+  width: 74px;
+}
+
+.input-checkbox-register {
+  margin: 0 !important;
+}
+
+
+.td_textarea {
+  max-height: 40px;
+  resize: none;
+  overflow-y: auto;
+  height: 37px;
+  /* width: 150px; */
+  font-size: 13px;
+  padding: 0px 4px;
+}
+
+th {
+  width: auto;
+}
+
+
+
+
+@media screen and (max-width: 1200px) {
+  .container {
+    /* display: grid;
+    grid-auto-columns: 100%;
+    place-items: center;
+    gap: 1em; */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #menu,
+  #tabla-clases {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .contenedor-buscador-filtros {
+    flex-direction: column;
+  }
+
+  .search {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .search,
+  .input-search,
+  .filter {
+    width: 100%;
+  }
+
+  .input-search,
+  .input-submit-search {
+    margin: 8px 0px;
+  }
+
+  .filter select {
+    width: 100%;
+  }
+
+  .contenedor-tabla {
+    overflow-y: scroll;
+    overflow-x: scroll;
+  }
+}
