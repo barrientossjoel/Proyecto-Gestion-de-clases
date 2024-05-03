@@ -12,18 +12,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Obtener el arrayJSON y decodificarlo nuevamente en un array de PHP
     $array = json_decode($data["arrayJSON"], true);
 
-    // Realizar cualquier operación con el array recibido, por ejemplo:
     // Imprimir el array para verificar que se recibió correctamente
     print_r($array);
+    
     // Verificar si la sesión ya está activa
     if (session_status() === PHP_SESSION_NONE) {
-      session_start(); // Iniciar la sesión si no está activa
+      session_start();
     }
-    $_SESSION['Array_valores_checkbox'] = $array;
-
-    // Puedes realizar cualquier otra operación con el array aquí
-
-    // Responder al cliente con un mensaje de éxito
+    $_SESSION['NUMBER_CHECKBOX'] = $array;
+    
     echo "Datos recibidos correctamente en peticion_POST.php";
   } else {
     // Si no se recibió el arrayJSON correctamente, responder con un mensaje de error
