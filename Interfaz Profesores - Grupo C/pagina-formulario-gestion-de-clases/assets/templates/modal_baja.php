@@ -45,7 +45,7 @@ if (session_status() === PHP_SESSION_NONE) {
               WHERE CLASES.CODIGO_USUARIO = '$id_usuario'
               AND CLASES.ID_CLASE = '$valor_checkbox'";
 
-            $resultado = mysqli_query($conexionBD, $consulta);
+            $resultado = mysqli_query($conn, $consulta);
 
             mostrarDatos($resultado);
           }
@@ -67,7 +67,7 @@ if (isset($_POST['btn_Baja'])) {
 
     if (is_array($valores_checkbox)) {
       $query = "DELETE FROM CLASES WHERE ID_CLASE = ? AND CODIGO_USUARIO = ?";
-      $stmt = $conexionBD->prepare($query);
+      $stmt = $conn->prepare($query);
       if ($stmt) {
         foreach ($valores_checkbox as $id_clase) {
           $stmt->bind_param("is", $id_clase, $id_usuario);
