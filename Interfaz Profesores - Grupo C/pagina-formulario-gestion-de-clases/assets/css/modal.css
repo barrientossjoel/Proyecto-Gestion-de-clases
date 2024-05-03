@@ -1,8 +1,11 @@
-a, a:hover {
+a,
+a:hover {
   text-decoration: none;
 }
 
-.modal,.modal2,.modal3 {
+.modal,
+.modal2,
+.modal3 {
   position: fixed;
   top: 0;
   left: 0;
@@ -10,20 +13,23 @@ a, a:hover {
   bottom: 0;
   background-color: #111111bd;
   display: flex;
-  opacity: 0!important;
-  pointer-events: none!important;
-  transition: opacity .6s!important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity .6s !important;
 
 }
 
-.modal--show,.modal2--show,.modal3--show  {
-  opacity: 1!important;
-  pointer-events: unset!important;
-  transition: opacity .6s!important;
-
+.modal--show,
+.modal2--show,
+.modal3--show {
+  opacity: 1 !important;
+  pointer-events: unset !important;
+  transition: opacity .6s !important;
 }
 
-.modal__container,.modal2__container,.modal3__container {
+.modal__container,
+.modal2__container,
+.modal3__container {
   width: 90%;
   background-color: midnightblue;
   margin: auto;
@@ -35,18 +41,25 @@ a, a:hover {
   gap: 1em;
   place-items: center;
   grid-auto-columns: 100%;
-  transform: var(--transform)!important;
-  transition: var(--transition)!important;
+  transform: var(--transform) !important;
+  transition: var(--transition) !important;
   overflow-x: hidden;
-  border: 1px solid white;
 }
 
-.modal__title,.modal__title2,.modal__title3  {
+.modal2__container {
+  max-width: 1200px !important;
+}
+
+.modal__title,
+.modal__title2,
+.modal__title3 {
   font-size: 2.5rem;
   margin: 0;
 }
 
-.btn-cerrar-modal,.btn-cerrar-modal2,.btn-cerrar-modal3 {
+.btn-cerrar-modal,
+.btn-cerrar-modal2,
+.btn-cerrar-modal3 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -54,7 +67,9 @@ a, a:hover {
   width: 100%;
 }
 
-.modal__close,.modal2__close,.modal3__close {
+.modal__close,
+.modal2__close,
+.modal3__close {
   text-decoration: none;
   color: #000;
   background-color: red;
@@ -66,7 +81,9 @@ a, a:hover {
   transition: background-color .3s;
 }
 
-.modal__close:hover,.modal2__close:hover,.modal3__close:hover {
+.modal__close:hover,
+.modal2__close:hover,
+.modal3__close:hover {
   color: red;
   background-color: #fff;
 }
@@ -82,37 +99,38 @@ form {
 
 .inputs-modal {
   font-size: 15px;
-  width: 240px;
-  border: 2px solid white;
+  width: 250px;
+
 }
 
 .textarea-form-class {
-  border: 2px solid white!important;
-  field-sizing: content;
+  /* field-sizing: content; */
   max-height: 200px;
   resize: none;
-  width: 500px!important;
-
 }
 
-.btn_añadirr{
+.btn_añadirr {
   padding: 1em 2em;
   border-radius: 6px;
   font-weight: 600;
 }
 
-
+.form-control {
+  width: 100%;
+}
 
 @media (max-width: 800px) {
   .modal__container {
     padding: 2em 1.5em;
   }
 
-
+  .modal__title {
+    font-size: 2rem;
+  }
 }
 
 
-.bad{
+.bad {
   display: none;
   background-color: darkred;
 }

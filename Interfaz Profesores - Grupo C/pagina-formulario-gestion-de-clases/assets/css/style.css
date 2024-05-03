@@ -1,4 +1,4 @@
-:root{ 
+:root {
   --color-borders-main: #767676;
 }
 
@@ -10,13 +10,14 @@
 
 body {
   /* width: 90%; */
-  padding: 0!important;
-  margin: 0!important;
-  max-width: 100%!important;
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: 100% !important;
   font-family: system-ui;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
   margin: 0;
 }
@@ -32,7 +33,7 @@ header {
   font-weight: 800;
 }
 
-.name-page{
+.name-page {
   text-transform: uppercase;
 
 }
@@ -57,10 +58,37 @@ header {
   text-decoration: none;
 }
 
-#nav-bar li:hover{
+#nav-bar li:hover {
   background: rgb(30, 31, 46);
   border: 1px solid #7e7e7e;
 }
+
+.contenedor-bienvenida-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  font-size: 20px;
+}
+
+/* .msg-alta-success{
+padding: 5px 10px;
+margin: 10px 0px;
+background-color: rgb(141, 190, 141);
+color: #000;
+border-radius: 8px;
+}
+
+.btn-close-msg-alta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #000!important;
+  padding: 5px 10px!important;
+  color: #fff;
+} */
 
 /* Seccion menu de administrador */
 main {
@@ -75,10 +103,11 @@ main {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  
+
 }
 
-#menu, #tabla-clases {
+#menu,
+#tabla-clases {
   padding: 10px 20px;
   margin: 15px 10px;
   border: 1px solid var(--color-borders-main);
@@ -104,7 +133,7 @@ main {
   font-weight: bold;
 }
 
-button:disabled{
+button:disabled {
   cursor: not-allowed;
   opacity: 1;
 }
@@ -121,12 +150,13 @@ button:disabled{
   background: rgb(51, 126, 51);
 }
 
-.btn-modificar:disabled,.btn-modificar:hover:disabled{
+.btn-modificar:disabled,
+.btn-modificar:hover:disabled {
   background-color: black;
   color: #666666;
 }
 
-.btn-modificar:hover{
+.btn-modificar:hover {
   background: rgb(31, 74, 31)
 }
 
@@ -134,21 +164,22 @@ button:disabled{
   background: rgb(232, 21, 21);
 }
 
-.btn-baja:disabled,.btn-baja:hover:disabled{
+.btn-baja:disabled,
+.btn-baja:hover:disabled {
   background-color: black;
   color: #666666;
 }
 
-.btn-baja:hover{
+.btn-baja:hover {
   background: rgb(165, 12, 12);
 }
 
-.imagen-menu img{
+.imagen-menu img {
   border-radius: 8px;
 }
 
 /* Seccion de la tabla de registros */
-.contenedor-buscador-filtros{
+.contenedor-buscador-filtros {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -164,7 +195,9 @@ button:disabled{
   border: 1px solid blueviolet;
 }
 
-.input-submit-search { border: 1px solid rgb(12, 146, 190); }
+.input-submit-search {
+  border: 1px solid rgb(12, 146, 190);
+}
 
 /* Tabla */
 
@@ -176,34 +209,60 @@ button:disabled{
   padding: 10px;
 }
 
-td, th {
-  vertical-align: middle!important;
+td,
+th {
+  vertical-align: middle !important;
   border: 1px solid #000;
   text-align: center;
 }
 
-.checkbox { width: 35px; }
-.aula{width: 46px;}
-.input-checkbox-register {margin: 0!important;}
+.th-class-checkbox {
+  width: 35px;
+}
+
+.th-class-comision {
+  width: 83px;
+}
+
+.th-class-aula {
+  width: 52px;
+}
+
+.th-class-hora {
+  width: 100px;
+}
+
+.th-class-fecha {
+  width: 120px;
+}
+
+.id_profe {
+  width: 74px;
+}
+
+.input-checkbox-register {
+  margin: 0 !important;
+}
 
 
 .td_textarea {
-  border: 1px solid #8c8c8c !important;
   max-height: 40px;
   resize: none;
   overflow-y: auto;
   height: 37px;
-  width: 150px;
+  /* width: 150px; */
   font-size: 13px;
   padding: 0px 4px;
 }
 
-th{
+th {
   width: auto;
 }
 
 
-@media screen and (max-width: 1200px) {  
+
+
+@media screen and (max-width: 1200px) {
   .container {
     /* display: grid;
     grid-auto-columns: 100%;
@@ -235,7 +294,8 @@ th{
     width: 100%;
   }
 
-  .input-search, .input-submit-search {
+  .input-search,
+  .input-submit-search {
     margin: 8px 0px;
   }
 
