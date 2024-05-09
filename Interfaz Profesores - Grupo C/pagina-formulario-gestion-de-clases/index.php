@@ -21,7 +21,7 @@ $_SESSION["CODIGO_USUARIO"] = 1;
   <!-- Styles CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/modal.css">
-  <link rel="icon" href="assets/img/icono.jpg">
+  <link rel="icon" href="assets/img/icono.png">
 </head>
 
 <body>
@@ -85,7 +85,7 @@ $_SESSION["CODIGO_USUARIO"] = 1;
           <button class="btn-modificar btns-menu" id="id-btn-modificar" disabled>Modificar una clase</button>
           <button class="btn-baja btns-menu" id="id-btn-baja" disabled>Baja de clase</button>
           <div class="imagen-menu">
-            <img class="img-logo-menu" src="assets/img/logo.jpg" width="150" height="150" alt="Logo Sistema de Administración Universal S.A.U" title="Logo Sistema de Administración Universal S.A.U">
+            <img class="img-logo-menu" src="assets/img/logo.png" width="150" height="150" alt="Logo Sistema de Administración Universal S.A.U" title="Logo Sistema de Administración Universal S.A.U">
           </div>
         </div>
       </section>
