@@ -21,11 +21,11 @@ $_SESSION["CODIGO_USUARIO"] = 1;
   <!-- Styles CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/modal.css">
-  <link rel="icon" href="assets/img/icono.jpg">
 
 
   <script type="module" src="assets/js/app.js" defer></script>
   <script type="module" src="assets/js/main.js" defer></script>
+  <link rel="icon" href="assets/img/icono.png">
 </head>
 
 <body>
@@ -89,7 +89,7 @@ $_SESSION["CODIGO_USUARIO"] = 1;
           <button class="btn-modificar btns-menu" id="id-btn-modificar" disabled>Modificar una clase</button>
           <button class="btn-baja btns-menu" id="id-btn-baja" disabled>Baja de clase</button>
           <div class="imagen-menu">
-            <img class="img-logo-menu" src="assets/img/logo.jpg" width="150" height="150" alt="Logo Sistema de Administración Universal S.A.U" title="Logo Sistema de Administración Universal S.A.U">
+            <img class="img-logo-menu" src="assets/img/logo.png" width="150" height="150" alt="Logo Sistema de Administración Universal S.A.U" title="Logo Sistema de Administración Universal S.A.U">
           </div>
         </div>
       </section>
@@ -129,12 +129,12 @@ $_SESSION["CODIGO_USUARIO"] = 1;
             <tbody>
               <?php
               $consulta = "SELECT clases.ID_CLASE, clases.CODIGO_USUARIO, usuxrol.CODIGO_ROL,
-              materias.ID_MATERIA, materias.NOMBRE_MATERIA,
+              materias.CODIGO_MATERIA, materias.NOMBRE_MATERIA,
               clases.COMISION, clases.AULA, clases.FECHA, clases.HORA, clases.TEMAS, clases.NOVEDADES,
               clases.ARCHIVOS
               FROM clases, usuarios, materias, usuxrol
               WHERE clases.CODIGO_USUARIO = usuarios.CODIGO_USUARIO
-              AND clases.ID_MATERIA = materias.ID_MATERIA
+              AND clases.CODIGO_MATERIA = materias.CODIGO_MATERIA
               AND usuxrol.CODIGO_USUARIO = clases.CODIGO_USUARIO";
               $resultado = mysqli_query($conn, $consulta);
               mostrarDatos($resultado);

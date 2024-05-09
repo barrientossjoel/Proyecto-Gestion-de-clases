@@ -89,12 +89,12 @@ $id_usuario = 1;
 
 function obtenerMaterias($conn)
 {
-  $query_materia = "SELECT MATERIAS.NOMBRE_MATERIA, MATERIAS.ID_MATERIA FROM materias";
+  $query_materia = "SELECT MATERIAS.NOMBRE_MATERIA, MATERIAS.CODIGO_MATERIA FROM materias";
   $res_materia = mysqli_query($conn, $query_materia);
   if ($res_materia) {
     while ($fila_materia = mysqli_fetch_assoc($res_materia)) {
 ?>
-      <option value="<?php echo $fila_materia['ID_MATERIA']; ?>"><?php echo $fila_materia['NOMBRE_MATERIA']; ?></option>
+      <option value="<?php echo $fila_materia['CODIGO_MATERIA']; ?>"><?php echo $fila_materia['NOMBRE_MATERIA']; ?></option>
     <?php
     }
   } else {
@@ -104,7 +104,7 @@ function obtenerMaterias($conn)
 
 function agregarClases($conn, $id_usuario, $id_materia, $comision, $aula, $fecha, $hora, $temas, $novedad, $archivos)
 {
-  $consulta = "INSERT INTO CLASES(CODIGO_USUARIO, ID_MATERIA, FECHA, HORA, TEMAS, NOVEDADES, COMISION, AULA, ARCHIVOS) VALUES ('$id_usuario','$id_materia','$fecha','$hora','$temas','$novedad','$comision','$aula', '$archivos')";
+  $consulta = "INSERT INTO CLASES(CODIGO_USUARIO, CODIGO_MATERIA, FECHA, HORA, TEMAS, NOVEDADES, COMISION, AULA, ARCHIVOS) VALUES ('$id_usuario','$id_materia','$fecha','$hora','$temas','$novedad','$comision','$aula', '$archivos')";
   $resultado = mysqli_query($conn, $consulta);
   if ($resultado) {
     return true;
