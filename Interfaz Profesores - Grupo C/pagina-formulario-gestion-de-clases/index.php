@@ -125,12 +125,12 @@ $_SESSION["CODIGO_USUARIO"] = 1;
             <tbody>
               <?php
               $consulta = "SELECT clases.ID_CLASE, clases.CODIGO_USUARIO, usuxrol.CODIGO_ROL,
-              materias.ID_MATERIA, materias.NOMBRE_MATERIA,
+              materias.CODIGO_MATERIA, materias.NOMBRE_MATERIA,
               clases.COMISION, clases.AULA, clases.FECHA, clases.HORA, clases.TEMAS, clases.NOVEDADES,
               clases.ARCHIVOS
               FROM clases, usuarios, materias, usuxrol
               WHERE clases.CODIGO_USUARIO = usuarios.CODIGO_USUARIO
-              AND clases.ID_MATERIA = materias.ID_MATERIA
+              AND clases.CODIGO_MATERIA = materias.CODIGO_MATERIA
               AND usuxrol.CODIGO_USUARIO = clases.CODIGO_USUARIO";
               $resultado = mysqli_query($conn, $consulta);
               mostrarDatos($resultado);
