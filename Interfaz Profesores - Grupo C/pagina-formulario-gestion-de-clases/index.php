@@ -21,6 +21,10 @@ $_SESSION["CODIGO_USUARIO"] = 1;
   <!-- Styles CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/modal.css">
+
+
+  <script type="module" src="assets/js/app.js" defer></script>
+  <script type="module" src="assets/js/main.js" defer></script>
   <link rel="icon" href="assets/img/icono.png">
 </head>
 
@@ -144,9 +148,6 @@ $_SESSION["CODIGO_USUARIO"] = 1;
   </main>
 
   <footer></footer>
-
-  <script type="module" src="assets/js/app.js"></script>
-  <script type="module" src="assets/js/main.js"></script>
 </body>
 
 </html>
