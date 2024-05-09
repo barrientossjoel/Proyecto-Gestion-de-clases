@@ -11,12 +11,12 @@ if (isset($_SESSION['NUMBER_CHECKBOX'])) {
   $id_usuario = $_SESSION["CODIGO_USUARIO"];
 
   $consulta = "SELECT CLASES.ID_CLASE, CLASES.CODIGO_USUARIO, USUXROL.CODIGO_ROL,
-  MATERIAS.ID_MATERIA, MATERIAS.NOMBRE_MATERIA,
+  MATERIAS.CODIGO_MATERIA, MATERIAS.NOMBRE_MATERIA,
   CLASES.COMISION, CLASES.AULA, CLASES.FECHA, CLASES.HORA, CLASES.TEMAS, CLASES.NOVEDADES,
   CLASES.ARCHIVOS
   FROM CLASES
   JOIN USUARIOS ON CLASES.CODIGO_USUARIO = USUARIOS.CODIGO_USUARIO
-  JOIN MATERIAS ON CLASES.ID_MATERIA = MATERIAS.ID_MATERIA
+  JOIN MATERIAS ON CLASES.CODIGO_MATERIA = MATERIAS.CODIGO_MATERIA
   JOIN USUXROL ON USUXROL.CODIGO_USUARIO = CLASES.CODIGO_USUARIO
   WHERE CLASES.CODIGO_USUARIO = '$id_usuario'
   AND CLASES.ID_CLASE = '$valor_checkbox'";
@@ -25,7 +25,7 @@ if (isset($_SESSION['NUMBER_CHECKBOX'])) {
   if ($resultado && $resultado->num_rows > 0) {
     $fila = mysqli_fetch_array($resultado);
 
-    $id_materia = $fila['ID_MATERIA'];
+    $id_materia = $fila['CODIGO_MATERIA'];
     $materia = $fila['NOMBRE_MATERIA'];
     $comision = $fila['COMISION'];
     $hora = $fila['HORA'];
@@ -142,7 +142,7 @@ if (isset($_POST['btn_Modificar'])) {
     strlen($novedad) >= 0 &&
     strlen($archivos) >= 0
   ) {
-    $consulta = "UPDATE CLASES SET ID_MATERIA = '$id_materia', FECHA ='$fecha', HORA = '$hora', TEMAS = '$temas', NOVEDADES = '$novedad', COMISION = '$comision', AULA = '$aula', ARCHIVOS = '$archivos' 
+    $consulta = "UPDATE CLASES SET CODIGO_MATERIA = '$id_materia', FECHA ='$fecha', HORA = '$hora', TEMAS = '$temas', NOVEDADES = '$novedad', COMISION = '$comision', AULA = '$aula', ARCHIVOS = '$archivos' 
     WHERE CODIGO_USUARIO = '$id_usuario' AND ID_CLASE= '$valor_checkbox'";
     mysqli_query($conn, $consulta);
     $resultado = mysqli_query($conn, $consulta);
