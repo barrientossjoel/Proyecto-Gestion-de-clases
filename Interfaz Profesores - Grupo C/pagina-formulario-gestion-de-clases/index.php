@@ -21,7 +21,7 @@ $_SESSION["CODIGO_USUARIO"] = 1;
   <!-- Styles CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/modal.css">
-  <link rel="icon" href="assets/img/logo.png">
+  <link rel="icon" href="assets/img/icono.jpg">
 </head>
 
 <body>
