@@ -74,7 +74,7 @@ if (isset($_SESSION['NUMBER_CHECKBOX'])) {
 
       <label for="aula-id">
         Aula:
-        <input type="number" min="1" max=100 placeholder="Ingrese número de aula" class="inputs-modal" name="aula" id="aula-id" value="<?php echo $aula; ?>">
+        <input type="number" min="1" max=100 placeholder="Ingrese número de aula" class="inputs-modal" name="new-aula" id="aula-id" value="<?php echo $aula; ?>">
       </label>
 
       <label for="new-hora-id">
