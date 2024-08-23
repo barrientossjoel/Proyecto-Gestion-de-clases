@@ -28,12 +28,24 @@ switch ($request_method){
         break;
 }
 
-//Recibir datos del formulario (cambiar nombres)
-$usuarios = $_POST['nombre_usuario'];
-$contraseña = $_POST['contraseña'];
+//Consulta SQL para obtener todos los usuarios
+if ($request_method === 'GET'){
+$sql = "SELECT ID, nombre_usuario FROM usuarios";
+$result = $conn -> query($sql);
+
+if ($result -> num_rows > 0){
+    $usuarios = array();
+    while ($row = $result -> fetch_assoc()){
+        $usuarios[] = $row;
+    }
+    echo json_encode($usuarios);
+} else {
+    echo json_encode(array('message' => 'No se encontraron usuarios.'));
+}
+}
 
 //Consulta SQL para eliminar datos
-$sql = 
+$sql = "DELETE ID, nombre_usuario FROM usuarios";
 
 
 
